@@ -4,12 +4,6 @@ import datetime
 from flask import Flask, request, jsonify
 from operator import itemgetter
 
-def validate(date_text):
-  try:
-    datetime.datetime.strptime(date_text, '%Y-%m-%d %H:%M:%S')
-  except ValueError:
-    raise ValueError("Incorrect data format, should be YYYY-MM-DD HH:MM:SS")
-
 app = Flask(__name__)
 
 @app.route("/jobs", methods=["POST", "GET"])
@@ -17,16 +11,6 @@ def array_jobs():
     """
     Retorna um array de execução de job dentro de uma janela.
     Cada array tem o limite máximo de execução de 8 horas (padrão), podendo ser alterado
-
-    arquivo = "dados.json"
-    janela_inicio = "2019-11-10 09:00:00"
-    janela_fim = "2019-11-11 12:00:00"
-
-    >>> array_jobs("dados/dados_01.json", "2019-11-10 09:00:00", "2019-11-11 12:00:00", 8)
-    [[1, 3], [2]]
-
-    >>> array_jobs("dados/dados_02.json", "2019-11-10 09:00:00", "2019-11-11 12:00:00")
-    [[1, 5], [3, 8, 9], [11, 12, 2], [10]]
     """
     janela_inicio = request.json["Data Inicio"]
     janela_fim = request.json["Data Fim"]

@@ -8,7 +8,7 @@
     {
         "ID": 2,
         "Descrição": "Importação de dados da Base Legada",
-        "Data Máxima de conclusão": "2019-11-11 12:00:00",
+        "Data Máxima de conclusão": "2019-11-12 12:00:00",
         "Tempo estimado": "4 horas"
     },
     {
@@ -19,56 +19,8 @@
     },
     {
         "ID": 4,
-        "Descrição": "Importação de dados de integração",
-        "Data Máxima de conclusão": "2019-11-11 08:00:00",
-        "Tempo estimado": "10 horas"
-    },
-    {
-        "ID": 5,
-        "Descrição": "Importação de dados de integração",
-        "Data Máxima de conclusão": "2019-11-10 18:00:00",
-        "Tempo estimado": "1 horas"
-    },
-    {
-        "ID": 6,
-        "Descrição": "Importação de dados de integração",
-        "Data Máxima de conclusão": "2019-11-13 18:00:00",
-        "Tempo estimado": "1 horas"
-    },
-    {
-        "ID": 7,
-        "Descrição": "Importação de dados de integração",
-        "Data Máxima de conclusão": "2019-11-12 18:00:00",
-        "Tempo estimado": "1 horas"
-    },
-    {
-        "ID": 8,
-        "Descrição": "Importação de dados da Base Legada",
-        "Data Máxima de conclusão": "2019-11-11 12:00:00",
-        "Tempo estimado": "1 horas"
-    },
-    {
-        "ID": 9,
-        "Descrição": "Importação de dados da Base Legada",
-        "Data Máxima de conclusão": "2019-11-11 12:00:00",
-        "Tempo estimado": "1 horas"
-    },
-    {
-        "ID": 10,
         "Descrição": "Importação de dados da Base Legada",
         "Data Máxima de conclusão": "2019-11-11 12:00:00",
         "Tempo estimado": "5 horas"
-    },
-    {
-        "ID": 11,
-        "Descrição": "Importação de dados da Base Legada",
-        "Data Máxima de conclusão": "2019-11-11 12:00:00",
-        "Tempo estimado": "1 horas"
-    },
-    {
-        "ID": 12,
-        "Descrição": "Importação de dados da Base Legada",
-        "Data Máxima de conclusão": "2019-11-11 12:00:00",
-        "Tempo estimado": "3 horas"
     }
 ]
