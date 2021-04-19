@@ -21,19 +21,19 @@ def array_jobs(arquivo, janela_inicio, janela_fim, horas_bloco_de_intervalo=8):
     >>> array_jobs("dados/dados_01.json", "2019-11-10 10:00:00", "2019-11-10 20:00:00", 8)
     [[1]]
     
-    >>> array_jobs("dados/dados_04.json", "2019-11-11 02:00:00", "2019-11-11 08:00:00")
+    >>> array_jobs("dados/dados_02.json", "2019-11-11 02:00:00", "2019-11-11 08:00:00")
     [[3]]
 
-    >>> array_jobs("dados/dados_04.json", "2019-11-11 02:00:00", "2019-11-11 11:00:00")
+    >>> array_jobs("dados/dados_02.json", "2019-11-11 02:00:00", "2019-11-11 11:00:00")
     [[3]]
 
-    >>> array_jobs("dados/dados_04.json", "2019-11-11 03:00:00", "2019-11-11 12:00:00")
+    >>> array_jobs("dados/dados_02.json", "2019-11-11 03:00:00", "2019-11-11 12:00:00")
     [[4]]
 
-    >>> array_jobs("dados/dados_04.json", "2019-11-11 02:00:00", "2019-11-11 12:00:00")
+    >>> array_jobs("dados/dados_02.json", "2019-11-11 02:00:00", "2019-11-11 12:00:00")
     [[3]]
 
-    >>> array_jobs("dados/dados_04.json", "2019-11-11 01:00:00", "2019-11-11 12:00:00")
+    >>> array_jobs("dados/dados_02.json", "2019-11-11 01:00:00", "2019-11-11 12:00:00")
     [[3], [4]]
     """
     dados = open(arquivo).read()
@@ -49,11 +49,11 @@ def array_jobs(arquivo, janela_inicio, janela_fim, horas_bloco_de_intervalo=8):
     tempo_execucao = 0
 
     #print(dados_ordenados)
-    #import ipdb; ipdb.set_trace()
     for job in dados_ordenados:
         if janela_inicio <= job["Data Máxima de conclusão"] <= janela_fim:
             tempo = re.match("^[0-9]+", job["Tempo estimado"])
             tempo_estimado = int(tempo.group(0))
+            import ipdb; ipdb.set_trace()
             if  tempo_estimado <= horas_bloco_de_intervalo and \
                 data_hora_prevista + timedelta(hours=tempo_estimado) <= datetime.strptime(job["Data Máxima de conclusão"], "%Y-%m-%d %H:%M:%S"):
                 data_hora_prevista = data_hora_prevista + timedelta(hours=tempo_estimado)
@@ -73,8 +73,8 @@ if __name__ == "__main__":
     import doctest
     import sys
 
-    doctest.testmod()
-    #array_jobs("dados/dados_04.json", "2019-11-11 02:00:00", "2019-11-11 12:00:00", 8)
+    #doctest.testmod()
+    array_jobs("dados/dados_02.json", "2019-11-11 02:00:00", "2019-11-11 12:00:00", 8)
     #array_jobs("dados/dados_01.json", "2019-11-10 11:00:00", "2019-11-11 12:00:00", 8)
 
     #if len(sys.argv) != 4:
